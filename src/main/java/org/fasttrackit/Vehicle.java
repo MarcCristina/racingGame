@@ -10,10 +10,6 @@ public class Vehicle {
         this.name = name.trim();
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String getName() {
         return name;
 
@@ -28,10 +24,22 @@ public class Vehicle {
 
     }
 
+    public double accelerate (double speed, double time) {
+        return 20;
+    }
     public  String getname(){ return name; }
 
     public void getname (String name) { this.name = name.trim(); }
 
     public String getColor() { return color; }
 
+    public void setColor (String color) { this.color = color; }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

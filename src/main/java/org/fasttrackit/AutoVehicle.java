@@ -9,8 +9,11 @@ public class AutoVehicle extends Vehicle {
 
     public AutoVehicle(Engine engine) {
         this.engine = engine;
-
         System.out.println("custom ................");
+
+    }
+    public AutoVehicle() {
+        this (new Engine());
 
     }
 
