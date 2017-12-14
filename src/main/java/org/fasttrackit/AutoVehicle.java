@@ -9,11 +9,32 @@ public class AutoVehicle extends Vehicle {
 
     public AutoVehicle(Engine engine) {
         this.engine = engine;
-        System.out.println("custom ................");
+        System.out.println("custom constructor called");
 
     }
+
     public AutoVehicle() {
-        this (new Engine());
+        this(new Engine());
+    }
+
+    @Override
+    public double accelerate(double speed) {
+        System.out.println("Accelerate implementation from Autovehicle.");
+        setCurrentSpeed(getCurrentSpeed() + speed);
+
+        double finalSpeed = getCurrentSpeed() + speed;
+        setCurrentSpeed(finalSpeed);
+
+        double traveledDistance = finalSpeed / 60;
+
+        double spentFuel = traveledDistance * mileage / 100;
+
+        fuelLevel -= spentFuel;
+//        same as
+//      fuelLevel = fuelLevel - spentFuel;
+
+        return traveledDistance;
+
 
     }
 
